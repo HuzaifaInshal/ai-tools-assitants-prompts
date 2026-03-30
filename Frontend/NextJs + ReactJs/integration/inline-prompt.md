@@ -1,8 +1,7 @@
 # Task
 
 You will be provided with api urls along with their possible query params, params, body, response and pages on which they need to be integrated.
-You can see project structure from ./agent_docs/project_structure.md.
-If response is not given then add some response a/c to your own.
+You can see project structure from ./agent_docs/project_structure.md. If response is not given then add some response a/c to your own. Also use Yup for validations and useFormik for form handling. Form field errors should be passed to each input/select/any other fields, and mutation errors should be handled with handleMutationError in /src/utils/handleMutationError.ts
 You need to convert those to something like the following style inside services folder:
 
 ```ts
@@ -40,6 +39,37 @@ export const useMethodSampleData = () =>
   });
 ```
 
+Usages:
+
+```ts
+
+// For query
+
+const {data,isPending,error} = useGetSampleData();
+
+if(isPending){
+  return <loading></loading> // luicide react spinning animation; handle accordingly
+}
+
+if(error){
+  return <div>{error}</div> // handle accordingly
+}
+
+// For mutation
+
+const {mutate,isPending} = useMethodSampleData();
+
+const randomFunction = ()=>{
+  mutate({},{
+    onSuccess:()=>{
+      toast.success()
+    }
+    onError:handleMutationError
+  })
+}
+
+```
+
 // In case of infinite api
 
 ```ts
@@ -69,9 +99,9 @@ export function useGetAllInfiniteData({
   });
 }
 
-//  getNextPageParam is declared in /src/utils/infinite-query.utils.ts
+//  getNextPageParam is declared in /src/utils/infiniteQueryUtils.ts
 //  PaginationReq and PaginationRes are declared in /src/types/common.ts
-//  also when calling the data in any api you can use transformInfiniteData from /src/utils/infinite-query.utils.ts
+//  also when calling the data in any api you can use transformInfiniteData from /src/utils/infiniteQueryUtils.ts
 
 ```
 
@@ -91,4 +121,4 @@ export interface User {
 }
 ```
 
-# Relevant APIs that needs to be integrated
+# Relevant APIs that needs to be integrated will be attached on later prompts
