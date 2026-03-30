@@ -24,7 +24,7 @@ export const useGetSampleData = ({}: Req) =>
   useQuery({
     queryKey: queryKeys, // will be declared in seperate file ../query-keys/
     queryFn: async () => {
-      const res = await axiosInstance.get(``); // axiosInstance is declared in /src/services
+      const res = await axiosInstance.get(``); // axiosInstance is declared in /src/services/axios.ts
       return res.data as Res;
     }
   });
@@ -33,7 +33,7 @@ export const useGetSampleData = ({}: Req) =>
 export const useMethodSampleData = () =>
   useMutation({
     mutationFn: async ({}: Req) => {
-      const res = await axiosInstance.put(``, payload); // axiosInstance is declared in /src/services
+      const res = await axiosInstance.put(``, payload); // axiosInstance is declared in /src/services/axios.ts
       return res.data as Res;
     }
   });
@@ -63,6 +63,7 @@ const randomFunction = ()=>{
   mutate({},{
     onSuccess:()=>{
       toast.success()
+      // add more here
     }
     onError:handleMutationError
   })
