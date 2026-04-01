@@ -37,7 +37,6 @@ features/[feature]/
 ├─ services/      # API calls for this feature
 ├─ types/         # Feature-specific types
 ├─ utils/         # Feature-specific helpers
-├─ styles/        # (Optional) reusable class groups
 └─ query-keys.ts  # Centralised query keys
 ```
 

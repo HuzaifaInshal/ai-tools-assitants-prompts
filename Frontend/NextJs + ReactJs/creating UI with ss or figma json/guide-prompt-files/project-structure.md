@@ -241,20 +241,6 @@ components
 
 ---
 
-# styles
-
-Common classes grouped, used only inside the feature. Please note its optional and only for those group of classes that can be reused, DO NOT do it for all.
-
-Example:
-
-```
-styles
- ├─ userTypographyStyles.ts
- └─ userBannerStyles.ts
-```
-
----
-
 # hooks
 
 Feature-specific React hooks.
