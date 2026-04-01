@@ -1,23 +1,25 @@
-# Task
+# By using figma extension + amazon Q for best setup
 
-You will be provided with static Tailwind HTML pages your job will be to convert into the provided Next.js routes and features.
+## Setup for figma extension
 
-Refer to project structure and conventions from `./agent_docs/project-structure.md`.
+Extension Name is <strong>Figma to Code (HTML, Tailwind, Flutter, SwiftUI)</strong>
 
----
+[Plugin Link](https://www.figma.com/community/plugin/842128343887142055/figma-to-code-html-tailwind-flutter-swiftui)
+[Git Link](https://github.com/bernaferrari/figmatocode)
 
-# Core Goal
+### Settings
 
-Transform static HTML into a **dynamic, responsive layout** using grids and flexboxes. Preserve the original layout structure where possible, but upgrade HTML elements to semantic/native equivalents and replace custom UI with radix components (sheet, select, dropdown, modal, etc.).
+Use tailwind tab with following settings:
 
----
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
 
-# Rules
+## Setup for Amazom Q
 
-Structure: one component per file · prefer `/components/ui` reusable components; only create new if none fit in the same folder · for multi-variant components (e.g. Button), extend existing variants before adding new ones.  
-Styling: group similar classes with `cn()` · no Tailwind built-in colors — use `globals.css` variables, add missing ones there · avoid hardcoded sizes (`w-[400px]`), prefer Tailwind scale (`w-96`). if encountered any place for image then · add global styles (ui based that can be used across entire web) in `/styles/ui`
-Assets: SVG icons → find `lucide-react` equivalent; if none exists, extract SVG into its own component file.
+Use auto model selection, give max context as possible, create auth feature on your own so then model will have context for it.
+Create page.tsx and view.tsx and then give in later prompts the view name along with html. Also if there are any extra stuff like tables or something complex in ui then explicityl explain it to the AI.
 
-# Relevant Colors
+## Prompt
 
-# Html Markups and Routes
+You will be provided with raw static html, your job would be convert it to a proper react code in the specified page, you can always check other features (especially auth) how its created and its structure, major ui components are specified in /components/ui so use them where necessary and if a component does not exist then add them there, please remember to use one component per file.
