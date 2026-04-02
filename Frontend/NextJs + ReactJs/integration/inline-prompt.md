@@ -4,7 +4,7 @@
 # Task
 
 You will be provided with api urls along with their possible query params, params, body, response and pages on which they need to be integrated.
-You can see project structure from ./agent_docs/project_structure.md. If response is not given then add some response a/c to your own. Also use Yup for validations and useFormik for form handling. Form field errors should be passed to each input/select/any other fields, and mutation errors should be handled with handleMutationError in /src/utils/handleMutationError.ts
+You can see project structure from ./agent_docs/project_structure.md. If response is not given then add some response a/c to your own. Also use Yup for validations and useFormik for form handling. Yup validations should be extensive and include all negative cases like min, max, trim etc. Also while submitting values in payload dont forget to trim them and transform email to lowercase. Form field errors should be passed to each input/select/any other fields, and mutation errors should be handled with handleMutationError in /src/utils/handleMutationError.ts
 You need to convert those to something like the following style inside services folder:
 
 ```ts
